@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Core.Singleton;
 using TMPro;
+using DG.Tweening;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -18,6 +19,7 @@ public class PlayerController : Singleton<PlayerController>
     private bool _canRun;
     private Vector3 _pos;
     private float _currentSpeed;
+    private Vector3 _startPosition;
 
     public GameObject endScreen;
 
@@ -26,6 +28,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Start()
     {
+        _startPosition = transform.position;
         ResetSpeed();
     }
 
@@ -83,6 +86,21 @@ public class PlayerController : Singleton<PlayerController>
     public void ResetSpeed()
     {
         _currentSpeed = speed;
+    }
+
+    public void ChangeHeight(float amount, float duration, float animationDuration, Ease ease)
+    {
+        //var p = transform.position;
+        //p.y = _startPosition.y + amount;
+        //transform.position = p;
+
+        transform.DOMoveY(_startPosition.y + amount, animationDuration).SetEase(ease); //.OnComplete(ResetHeight);
+        Invoke(nameof(ResetHeight), duration);
+    }
+
+    public void ResetHeight()
+    {
+        transform.DOMoveY(_startPosition.y, .1f);
     }
     #endregion
 }
