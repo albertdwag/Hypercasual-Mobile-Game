@@ -22,13 +22,18 @@ public class ItemCollactableBase : MonoBehaviour
         if (collision.transform.CompareTag(compareTag))
             Collect();
 
-        gameObject.GetComponent<Collider>().enabled = false;
+        //gameObject.GetComponent<Collider>().enabled = false;
+    }
+
+    protected virtual void HideItens()
+    {
+        if (graphicItem != null) graphicItem.SetActive(false);
+        Invoke("HideObject", timeToHide);
     }
 
     protected virtual void Collect()
     {
-        if (graphicItem != null) graphicItem.SetActive(false);
-        Invoke("HideObject", timeToHide);
+        HideItens();
         OnCollect();
     }
 

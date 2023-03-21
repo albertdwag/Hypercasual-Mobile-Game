@@ -22,6 +22,7 @@ public class PlayerController : Singleton<PlayerController>
     private Vector3 _startPosition;
 
     public GameObject endScreen;
+    public GameObject coinCollector;
 
     [Header("Text")]
     public TextMeshPro uiTextPowerUp;
@@ -90,17 +91,18 @@ public class PlayerController : Singleton<PlayerController>
 
     public void ChangeHeight(float amount, float duration, float animationDuration, Ease ease)
     {
-        //var p = transform.position;
-        //p.y = _startPosition.y + amount;
-        //transform.position = p;
-
-        transform.DOMoveY(_startPosition.y + amount, animationDuration).SetEase(ease); //.OnComplete(ResetHeight);
+        transform.DOMoveY(_startPosition.y + amount, animationDuration).SetEase(ease);
         Invoke(nameof(ResetHeight), duration);
     }
 
     public void ResetHeight()
     {
         transform.DOMoveY(_startPosition.y, .1f);
+    }
+
+    public void ChangeCoinCollectorSize(float amount) 
+    {
+        coinCollector.gameObject.transform.localScale = Vector3.one * amount;
     }
     #endregion
 }

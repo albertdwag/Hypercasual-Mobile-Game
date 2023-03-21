@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3642309336046301944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.04}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -145,7 +145,7 @@ MonoBehaviour:
   compareTag: Player
   particles: {fileID: 0}
   timeToHide: 3
-  graphicItem: {fileID: 3642309336046301944}
+  graphicItem: {fileID: 3642309337569299909}
   audioSource: {fileID: 0}
   duration: 2
   amountHeight: 5
