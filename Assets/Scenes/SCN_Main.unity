@@ -2320,7 +2320,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141426179}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -3770,18 +3770,6 @@ PrefabInstance:
     - target: {fileID: 1328072938530588300, guid: 3707e01e89345ea4cae9c8964fe03d67, type: 3}
       propertyPath: m_Name
       value: PFB_PowerUpCoins
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328072938530588302, guid: 3707e01e89345ea4cae9c8964fe03d67, type: 3}
-      propertyPath: m_Size.x
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328072938530588302, guid: 3707e01e89345ea4cae9c8964fe03d67, type: 3}
-      propertyPath: m_Size.y
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328072938530588302, guid: 3707e01e89345ea4cae9c8964fe03d67, type: 3}
-      propertyPath: m_Size.z
-      value: 1.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3707e01e89345ea4cae9c8964fe03d67, type: 3}
