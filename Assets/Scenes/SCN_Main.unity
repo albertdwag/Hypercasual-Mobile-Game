@@ -2174,7 +2174,7 @@ MonoBehaviour:
   lerpSpeed: 9
   tagToCheckEnemy: Enemy
   tagToCheckEndLine: EndLine
-  speed: 5
+  speed: 1
   invencible: 0
   endScreen: {fileID: 1512964175}
   coinCollector: {fileID: 1141426179}
@@ -3408,6 +3408,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1115490772}
     m_Modifications:
+    - target: {fileID: 1935446023, guid: 89e20167823a30d459856414377997d1, type: 3}
+      propertyPath: animatorSetups.Array.data[2].speed
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5156129202013452133, guid: 89e20167823a30d459856414377997d1, type: 3}
       propertyPath: m_RootOrder
       value: 2

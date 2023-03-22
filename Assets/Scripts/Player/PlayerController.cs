@@ -20,6 +20,7 @@ public class PlayerController : Singleton<PlayerController>
     private Vector3 _pos;
     private float _currentSpeed;
     private Vector3 _startPosition;
+    private float _baseSpeedToAnimation = 7f;
 
     public GameObject endScreen;
     public GameObject coinCollector;
@@ -80,7 +81,7 @@ public class PlayerController : Singleton<PlayerController>
     public void StartToRun()
     {
         _canRun = true;
-        animatorManager.Play(AnimatorManager.AnimationType.RUN);
+        animatorManager.Play(AnimatorManager.AnimationType.RUN, _currentSpeed / _baseSpeedToAnimation);
     }
 
     #region POWERUPS
