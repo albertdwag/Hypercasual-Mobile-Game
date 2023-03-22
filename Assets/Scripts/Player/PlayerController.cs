@@ -27,6 +27,9 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Text")]
     public TextMeshPro uiTextPowerUp;
 
+    [Header("Animation")]
+    public AnimatorManager animatorManager;
+
     private void Start()
     {
         _startPosition = transform.position;
@@ -48,7 +51,12 @@ public class PlayerController : Singleton<PlayerController>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == tagToCheckEnemy)
-            if (!invencible) EndGame();
+            if (!invencible)
+            {
+                MoveBack();
+                EndGame(AnimatorManager.AnimationType.DEAD);
+            }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,15 +65,22 @@ public class PlayerController : Singleton<PlayerController>
             EndGame();
     }
 
-    private void EndGame()
+    private void MoveBack()
+    {
+        transform.DOMoveZ(-1f, .3f).SetRelative();
+    }
+
+    private void EndGame(AnimatorManager.AnimationType animationType = AnimatorManager.AnimationType.IDLE)
     {
         _canRun = false;
         endScreen.SetActive(true);
+        animatorManager.Play(animationType);
     }
 
     public void StartToRun()
     {
         _canRun = true;
+        animatorManager.Play(AnimatorManager.AnimationType.RUN);
     }
 
     #region POWERUPS
