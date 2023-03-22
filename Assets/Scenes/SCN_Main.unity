@@ -2791,6 +2791,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302720916}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1317453005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5531986718136724959, guid: 89e20167823a30d459856414377997d1, type: 3}
+  m_PrefabInstance: {fileID: 1935446020}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1391841004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3487,6 +3492,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5156129202013452133, guid: 89e20167823a30d459856414377997d1, type: 3}
   m_PrefabInstance: {fileID: 1935446020}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1935446022 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7193805671317595757, guid: 89e20167823a30d459856414377997d1, type: 3}
+  m_PrefabInstance: {fileID: 1935446020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1935446023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317453005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871c50145a3d35646ad410bfc2936b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1935446022}
+  animatorSetups:
+  - type: 0
+    trigger: idle
+  - type: 1
+    trigger: run
+  - type: 2
+    trigger: dead
 --- !u!4 &1984828019 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1592349978308574068, guid: bc44bceb42a77844f986624f087816c4, type: 3}
