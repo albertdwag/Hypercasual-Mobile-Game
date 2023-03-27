@@ -32,6 +32,11 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")]
     public AnimatorManager animatorManager;
 
+    private void OnValidate()
+    {
+        _bounceHelper = GetComponent<BounceHelper>();
+    }
+
     private void Start()
     {
         _startPosition = transform.position;
