@@ -24,6 +24,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public GameObject endScreen;
     public GameObject coinCollector;
+    [SerializeField] private BounceHelper _bounceHelper;
 
     [Header("Text")]
     public TextMeshPro uiTextPowerUp;
@@ -64,6 +65,11 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (other.transform.tag == tagToCheckEndLine)
             EndGame();
+    }
+
+    public void Bounce()
+    {
+        _bounceHelper.Bounce();
     }
 
     private void MoveBack()

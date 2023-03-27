@@ -8,10 +8,16 @@ public class ItemCollactableCoin : ItemCollactableBase
     public float minDistance = 1f;
     public bool collect = false;
 
+    private void Start()
+    {
+        CoinsAnimationManager.Instance.RegisterCoin(this);
+    }
+
     protected override void OnCollect()
     {
         base.OnCollect();
         collect = true;
+        PlayerController.Instance.Bounce();
     }
 
     protected override void Collect()
