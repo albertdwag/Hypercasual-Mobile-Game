@@ -21,5 +21,5 @@ MonoBehaviour:
   levelsPiecesEnd:
   - {fileID: 9025715071880247087, guid: d23c789691cb2da4eb95651d0d8085f1, type: 3}
   piecesStartNumber: 2
-  piecesNumber: 5
+  piecesNumber: 10
   piecesEndNumber: 1
