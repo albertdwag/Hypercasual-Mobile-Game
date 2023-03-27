@@ -35,6 +35,7 @@ public class PlayerController : Singleton<PlayerController>
     private void Start()
     {
         _startPosition = transform.position;
+        _bounceHelper.Bounce();
         ResetSpeed();
     }
 

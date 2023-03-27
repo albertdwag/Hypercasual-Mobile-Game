@@ -6,10 +6,12 @@ public class PowerUpBase : ItemCollactableBase
 {
     [Header("Power Up")]
     public float duration;
+    public BounceHelper bounceHelper;
 
     protected override void OnCollect()
     {
         base.OnCollect();
+        bounceHelper.Bounce();
         StartPowerUp();
     }
 
