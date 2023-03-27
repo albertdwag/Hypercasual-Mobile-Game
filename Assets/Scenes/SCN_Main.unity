@@ -1582,7 +1582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleDuration: 0.05
   scaleBounce: 1.2
-  ease: 1
+  ease: 24
 --- !u!1 &1141385057
 GameObject:
   m_ObjectHideFlags: 3
