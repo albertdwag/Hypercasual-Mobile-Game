@@ -32,6 +32,9 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")]
     public AnimatorManager animatorManager;
 
+    [Header("Particles")]
+    public ParticleSystem killParticle;
+
     private void OnValidate()
     {
         _bounceHelper = GetComponent<BounceHelper>();
@@ -63,6 +66,7 @@ public class PlayerController : Singleton<PlayerController>
             {
                 MoveBack();
                 EndGame(AnimatorManager.AnimationType.DEAD);
+                if (killParticle != null) killParticle.Play();
             }
 
     }
