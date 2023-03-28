@@ -35,6 +35,10 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Particles")]
     public ParticleSystem killParticle;
 
+    [Header("Limites")]
+    public Vector2 limit = new Vector2(-4, 5);
+
+
     private void OnValidate()
     {
         _bounceHelper = GetComponent<BounceHelper>();
@@ -54,6 +58,9 @@ public class PlayerController : Singleton<PlayerController>
         _pos = target.position;
         _pos.y = transform.position.y;
         _pos.z = transform.position.z;
+
+        if (_pos.x < limit.x) _pos.x = limit.x;
+        else if (_pos.x > limit.y) _pos.x = limit.y;
 
         transform.Translate(transform.forward * _currentSpeed * Time.deltaTime);
         transform.position = Vector3.Lerp(transform.position, _pos, lerpSpeed * Time.deltaTime);
